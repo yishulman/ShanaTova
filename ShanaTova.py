@@ -2,13 +2,13 @@ from ascii_magic import AsciiArt
 from PIL import Image, ImageDraw, ImageFont
 
 # Rebuild artwork with overlaid text
-base_img = Image.open('images/apple.jpg')
+base_img = Image.open('apple.jpg')
 draw = ImageDraw.Draw(base_img)
 
 text = "Shana Tova!"
 position = (10, 10)  # (x, y) coordinates
 font_size = 40  
-font = ImageFont.truetype("arial.ttf", font_size)
+font = ImageFont.load_default(font_size)
 
 draw.text(position, text, font=font, fill="black")
 
